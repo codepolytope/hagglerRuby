@@ -1,239 +1,154 @@
-    <div class="banner">
-      <div class="wrapper">
-        <h1>HandAble<br> Craft Anything</h1>
-      </div>
+<div id="background">
+  <header class="cf">
+    <div class="wrapper">
+      <a href="<% root_path %>" id="logo">Handable</a>
+      <nav>
+        <ul>
+          <li>
+            <% if user_signed_in? %>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> 
+            <% else %>
+              <%= link_to "Sign Up", new_user_registration_path %><span> |</span>
+              <%= link_to "Sign In", new_user_session_path %>
+            <% end %>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <div class="nav">
-      <div class="wrapper">
-        <a href="#">Popular</a>
-        <a href="#">Recent</a>
-        <label for="search">Search</label>
-        <input id="search" type="search" placeholder="iPhone 6+ template">
-      </div>
+  </header>
+
+  <div class="wrapper">
+    <h1>Wear the armor of Craft<br> realize, create and make what you love</h1>
+      <%= link_to "Create a Thing", new_thing_path, class: "button button_highlight" %>
+      <%= link_to "Explore Things", things_path, class: "button button_white" %>
     </div>
+  </div>
 
-    <ul class="resources">
-      <li>
-        <%= image_tag "01.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "02.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "03.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "04.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "05.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "06.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "07.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "08.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "09.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "10.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "11.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "12.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "13.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "01.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "02.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "03.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "04.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "05.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "06.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "07.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "08.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "09.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "10.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "11.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "12.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag "13.png" %>
-        <div class="resource_info">
-          <h2>Cardboard Tag Template</h2>
-          <a href="#" class="button">View Resource</a>
-          <p class="price">$22</p>
-        </div>
-      </li>
-    </ul>
+<div class="nav">
+  <div class="wrapper cf">
+    <a href="#">Popular</a>
+    <a href="#">Recent</a>
+    <input id="search" type="search" placeholder="Search cool things">
+  </div>
+</div>
 
- <% @things.each do |thing| %>
-    <tr>
-      <td><%= thing.thing_name %></td>
-      <td><%= thing.description %></td>
-      <td><%= thing.date %></td>
-      <td><%= thing.cost %></td>
-      <td><%= link_to 'Show', thing %></td>
-      <td><%= link_to 'Edit', edit_thing_path(thing) %></td>
-      <td><%= link_to 'Destroy', thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-<br>
+<div class="wrapper_wide">
+  <ul class="resources">
+    <li>
+      <%= image_tag "01.png" %>
+      <div class="resource_info">
+        <h2>Cardboard Tag Template</h2>
+        <a href="#" class="button">View Resource</a>
+        <p class="price">$22</p>
+      </div>
+    </li>
+    <li>
+      <%= image_tag "02.png" %>
+      <div class="resource_info">
+        <h2>Cardboard Tag Template</h2>
+        <a href="#" class="button">View Resource</a>
+        <p class="price">$22</p>
+      </div>
+    </li>
+    <li>
+      <%= image_tag "03.png" %>
+      <div class="resource_info">
+        <h2>Cardboard Tag Template</h2>
+        <a href="#" class="button">View Resource</a>
+        <p class="price">$22</p>
+      </div>
+    </li>
+    <li>
+      <%= image_tag "04.png" %>
+      <div class="resource_info">
+        <h2>Cardboard Tag Template</h2>
+        <a href="#" class="button">View Resource</a>
+        <p class="price">$22</p>
+      </div>
+    </li>
+    <li>
+      <%= image_tag "05.png" %>
+      <div class="resource_info">
+        <h2>Cardboard Tag Template</h2>
+        <a href="#" class="button">View Resource</a>
+        <p class="price">$22</p>
+      </div>
+    </li>
+    <li>
+      <%= image_tag "06.png" %>
+      <div class="resource_info">
+        <h2>Cardboard Tag Template</h2>
+        <a href="#" class="button">View Resource</a>
+        <p class="price">$22</p>
+      </div>
+    </li>
+    <li>
+      <%= image_tag "07.png" %>
+      <div class="resource_info">
+        <h2>Cardboard Tag Template</h2>
+        <a href="#" class="button">View Resource</a>
+        <p class="price">$22</p>
+      </div>
+    </li>
+    <li>
+      <%= image_tag "08.png" %>
+      <div class="resource_info">
+        <h2>Cardboard Tag Template</h2>
+        <a href="#" class="button">View Resource</a>
+        <p class="price">$22</p>
+      </div>
+    </li>
+    <li>
+      <%= image_tag "09.png" %>
+      <div class="resource_info">
+        <h2>Cardboard Tag Template</h2>
+        <a href="#" class="button">View Resource</a>
+        <p class="price">$22</p>
+      </div>
+    </li>
+    <li>
+      <%= image_tag "10.png" %>
+      <div class="resource_info">
+        <h2>Cardboard Tag Template</h2>
+        <a href="#" class="button">View Resource</a>
+        <p class="price">$22</p>
+      </div>
+    </li>
+    <li>
+      <%= image_tag "11.png" %>
+      <div class="resource_info">
+        <h2>Cardboard Tag Template</h2>
+        <a href="#" class="button">View Resource</a>
+        <p class="price">$22</p>
+      </div>
+    </li>
+    <li>
+      <%= image_tag "12.png" %>
+      <div class="resource_info">
+        <h2>Cardboard Tag Template</h2>
+        <a href="#" class="button">View Resource</a>
+        <p class="price">$22</p>
+      </div>
+    </li>
+    <li>
+      <%= image_tag "13.png" %>
+      <div class="resource_info">
+        <h2>Cardboard Tag Template</h2>
+        <a href="#" class="button">View Resource</a>
+        <p class="price">$22</p>
+      </div>
+    </li>
+  </ul>  
+</div>
 
-<%= link_to 'New Thing', new_thing_path %>
+<% @things.each do |thing| %>
+<tr>
+  <td><%= thing.thing_name %></td>
+  <td><%= thing.description %></td>
+  <td><%= thing.date %></td>
+  <td><%= thing.cost %></td>
+  <td><%= link_to 'Show', thing %></td>
+  <td><%= link_to 'Edit', edit_thing_path(thing) %></td>
+  <td><%= link_to 'Destroy', thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+<% end %>

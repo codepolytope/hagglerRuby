@@ -1,15 +1,395 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+$white: #FFFFFF;
+$highlight: #d2674e;
+$dark: #22292e;
+$light: #EDEFF5;
+
+* {
+  box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "proxima-nova", sans-serif; }
+
+.wrapper_wide {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.wrapper_skinny {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.cf:before, .cf:after {
+	content: " ";
+	display: table;
+}
+
+.cf:after {
+	clear: both;
+}
+
+#background {
+	background-image: image-url("05.png");
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+	header {
+		padding: 2em 0;
+		#logo {
+			float: left;
+			text-transform: uppercase;
+			font-weight: 700;
+			color: $white;
+			text-decoration: none;
+		}
+		nav {
+			float: right;
+			ul {
+				list-style: none;
+				margin: 0;
+				li {
+					display: inline;
+					margin-left: 2.5rem;
+					a {
+						color: $white;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+	h1 {
+		color: $white;
+		font-size: 3em;
+		font-weight: 500;
+		letter-spacing: 1px;
+		margin: 7rem 0 2rem 0;
+	}
+	.button {
+		margin: 3em 2.5% 0 2.5%;
+	}
+}
+
+#notice_wrapper {
+	width: 100%;
+	position: absolute;
+	background: rgba(208,103,82, 0.85);
+	z-index: 999;
+	p {
+		color: $white;
+		text-align: center;
+		font-weight: 700;
+		font-size: 1.25rem;
+		padding: 1.5rem 0;
+	}
+}
+
+.nav {
+  background: #3a3b49; }
+  .nav a, .nav label {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    margin-right: 2em; }
+    .nav a:hover, .nav label:hover {
+      color: #4ad7b1; }
+  .nav label {
+    margin-right: 0;
+    border-right: 1px solid #4ad7b1;
+    padding-right: 1.5em; }
+    .nav label:hover {
+      color: #ffffff; }
+  .nav input[type="search"] {
+    background: transparent;
+    outline: none;
+    border: none;
+    padding: 2em 1em;
+    color: #ffffff;
+    font-style: italic;
+    font-size: 1.5em;
+    font-weight: 400; 
+  }
+
+.resources {
+	padding: 0;
+	margin: 0;
+	list-style: none; 
+}
+.resources li {
+  width: 25%;
+  float: left;
+  display: inline-block;
+  position: relative;
+  transition: transform 0.4s;
+  overflow: hidden;
+  transition: transform 0.4s, opacity 0.1s 0.3s;
+  display: table; 
+	}
+.resources li img {
+  width: 100%;
+  max-width: 100%; 
+}
+.resources .resource_info {
+  background: rgba(74, 215, 177, 0.85);
+  padding: 2em 10%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: auto;
+  bottom: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.4s, opacity 0.1s 0.3s;
+  display: table-cell;
+  vertical-align: middle; 
+}
+.resources .resource_info h2 {
+  margin: 0.5em;
+  color: #ffffff;
+  font-size: 1em;
+  line-height: 1;
+  text-transform: uppercase; 
+}
+.resources .resource_info .button {
+  border: 2px solid #ffffff;
+  padding: 1em 1.5em;
+  border-radius: 0.5em;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 700;
+  transition: all 0.4s ease-in-out; 
+}
+.resources .resource_info .button:hover {
+  border: 2px solid #30313d;
+  color: #30313d; 
+}
+.resources .resource_info .price {
+  display: inline;
+  font-weight: 700;
+  color: #30313d;
+  padding-left: 1.5em; 
+}
+.resources li:hover img {
+  transform: scale(1.5);
+  transition: transform 0.4s, opacity 0.1s 0.3s; 
+}
+.resources li:hover .resource_info {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: transform 0.4s, opacity 0.1s; 
+  font-size: 1em;
+}
+
+.button {
+	color: $white;
+	text-decoration: none;
+	font-size: 1rem;
+	padding: 1rem 2rem;
+	border-radius: 2rem;
+	outline: none;
+	border: none;
+  display: inline-block;
+  min-width: 8.5rem;
+}
+
+.button_highlight {
+	background: $highlight;
+	transition: background .4s ease-in-out;
+	&:hover {
+		background: darken($highlight, 7.5%);
+	}
+}
+
+.button_white {
+	background: $white;
+	color: $dark;
+	transition: background .4s ease-in-out;
+	&:hover {
+		background: darken($white, 7.5%);
+	}
+}
+
+.button_block {
+	display: block;
+	margin: 0 auto;
+}
+
+#main_header {
+	color: $dark;
+	background: $white;
+	padding: 2.5rem 0;
+	#logo {
+		float: left;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: $dark;
+		text-decoration: none;
+	}
+	nav {
+		float: right;
+		ul {
+			list-style: none;
+			margin: 0;
+			li {
+				display: inline;
+				margin-left: 2.5rem;
+				a {
+					color: $dark;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+#banner {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	margin-bottom: 4rem;
+	h1 {
+		text-align: center;
+		color: $white;
+		font-size: 3rem;
+		font-weight: 300;
+		letter-spacing: 1px;
+		margin: 0;
+		padding: 8rem 0;
+	}
+}
+
+.sign_in_banner {
+	background-image: image-url("02.png");
+}
+
+.sign_up_banner {
+	background-image: image-url("03.png");
+}
+
+.pagination:before, .pagination:after {
+	content: " ";
+	display: table;
+}
+
+.pagination:after {
+	clear: both;
+}
+
+.pagination {
+	text-align: center;
+	margin: 1rem 0 5rem 0;
+	a, .previous_page, .current, .next_page {
+		padding: 0.75rem 1rem;
+		margin: 0 .25rem;
+		border-radius: .15rem;
+		line-height: 1.25;
+		text-decoration: none;
+		background: #EDEFF5;
+		font-weight: 700;
+		font-size: .7rem;
+		font-style: normal;
+		color: $dark;
+		&:hover {
+			background: $highlight;
+			color: $white;
+		}
+	}
+	.current {
+		background: $highlight;
+		color: $white;
+	}
+	.disabled {
+		color: #C0C0C0;
+		&:hover {
+			color: #C0C0C0;
+			background: #EDEFF5;
+		}
+	}
+}
+
+.field {
+	margin: .5rem 0 1.5rem 0;
+}
+
+input[type="email"], input[type="text"], input[type="password"], textarea {
+	width: 100%;
+	height: 2.5rem;
+	padding: .25rem 1rem;
+	background: $light;
+	border: 1px solid darken($light, 5%);
+	border-radius: .35rem;
+	margin-top: .5rem;
+}
+
+textarea {
+	min-height: 8rem;
+	margin-top: .5rem !important;
+}
+
+#form {
+	padding: 0 0 5rem 0;
+}
+
+
+
+@media only screen and (max-width: 1250px) {
+  .resources li {
+    width: 33.333%; }
+    .resources li .resource_info {
+      padding: 3em 12%; 
+      } 
+    }
+
+@media only screen and (max-width: 900px) {
+  .banner h1 {
+    padding: 1.5em 0;
+    font-size: 3.5em; }
+
+  .nav a, .nav label {
+    font-size: 1.1em;
+    margin-right: 1em; }
+  .nav label {
+    margin-right: 0;
+    border-right: 1px solid #4ad7b1;
+    padding-right: 1.5em; }
+  .nav input[type="search"] {
+    padding: 1.5em;
+    font-size: 1.1em; }
+
+  .resources li {
+    width: 50%; }
+    .resources li .resource_info {
+      padding: 3.5em 15%; 
+    } 
+  }
+
+@media only screen and (max-width: 375px) {
+  #background {
+    padding: 0.5em;
+    font-size: 0.5em; }
+
+  .nav a{
+    display: none; 
+  }
+	
+	#search {
+		font-size: 1em;
+	}
+
+  .resources li {
+    width: 100%; 
+  } 
+}
+
