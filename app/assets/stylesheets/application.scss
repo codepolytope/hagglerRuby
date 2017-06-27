@@ -259,6 +259,13 @@ html, body {
 	background-size: cover;
 	background-position: center center;
 	margin-bottom: 4rem;
+	#logo {
+		float: left;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: $white;
+		text-decoration: none;
+	}
 	h1 {
 		text-align: center;
 		color: $white;
@@ -271,11 +278,11 @@ html, body {
 }
 
 .sign_in_banner {
-	background-image: image-url("02.png");
+	background-image: image-url("09.png");
 }
 
 .sign_up_banner {
-	background-image: image-url("03.png");
+	background-image: image-url("06.png");
 }
 
 .pagination:before, .pagination:after {
@@ -320,7 +327,7 @@ html, body {
 }
 
 .field {
-	margin: .5rem 0 1.5rem 0;
+	margin: 1em 0;
 }
 
 input[type="email"], input[type="text"], input[type="password"], textarea {
